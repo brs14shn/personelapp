@@ -35,7 +35,10 @@ dbConnection()
 // Accept JSON:
 app.use(express.json())
 // CORS:
-app.use(cors())
+app.use(cors({
+    origin: '*', // İzin verilen alan adı
+  }));
+  
 
 
 
