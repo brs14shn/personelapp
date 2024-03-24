@@ -10,6 +10,8 @@ module.exports = async function() {
 
     /* REMOVE DATABASE */
     const { mongoose } = require('../configs/dbConnection')
+    const { faker } = require('@faker-js/faker');
+
     await mongoose.connection.dropDatabase()
     console.log('- Database and all data DELETED!')
     /* REMOVE DATABASE */
@@ -32,11 +34,11 @@ module.exports = async function() {
                     departmentId: department._id,
                     username: "test" + (value[0] + i),
                     password: "1234",
-                    firstName: "firstName",
-                    lastName: "lastName",
-                    phone: "123456789",
+                    firstName: faker.person.firstName,
+                    lastName: faker.person.lastName,
+                    phone: faker.phone.number,
                     email: "test" + (value[0] + i) + "@site.com",
-                    title: "title",
+                    title: faker.person.jobTitle,
                     salary: 2500,
                     description: "description",
                     isActive: true,
