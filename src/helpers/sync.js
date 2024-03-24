@@ -35,7 +35,7 @@ module.exports = async function() {
                     username: faker.internet.userName(),
                     password: "1234",
                     firstName: faker.person.fullName(),
-                    lastName: faker.name.lastName(),
+                    lastName: faker.person.lastName(),
                     phone: faker.phone.number,
                     email:faker.internet.email(),
                     title: faker.person.jobTitle,
@@ -44,7 +44,7 @@ module.exports = async function() {
                     isActive: true,
                     isAdmin: false,
                     isLead: false,
-                    startedAt: "2023-10-15 13:14:15"
+                    startedAt:faker.date.past()
                 })
             }
             console.log('- Personnels Added.')
