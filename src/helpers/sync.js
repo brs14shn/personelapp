@@ -34,7 +34,7 @@ module.exports = async function() {
                     departmentId: department._id,
                     username: "test" + (value[0] + i),
                     password: "1234",
-                    firstName: faker.person.firstName,
+                    firstName: faker.person.fullName(),
                     lastName: faker.name.lastName(),
                     phone: faker.phone.number,
                     email: "test" + (value[0] + i) + "@site.com",
