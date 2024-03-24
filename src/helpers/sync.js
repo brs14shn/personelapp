@@ -32,19 +32,19 @@ module.exports = async function () {
       for (let i in [...Array(10)]) {
         Personnel.create({
             departmentId: department._id,
-            username: "test" + (value[0] + i),
+            username: faker.internet.userName(),
             password: "1234",
             firstName: faker.person.firstName(),
-            lastName: "lastName",
-            phone: "123456789",
-            email: "test" + (value[0] + i) + "@site.com",
-            title: "title",
+            lastName: faker.person.lastName(),
+            phone: faker.phone.number,
+            email:faker.internet.email() ,
+            title: faker.person.jobTitle,
             salary: 2500,
             description: "description",
             isActive: true,
             isAdmin: false,
             isLead: false,
-            startedAt: "2023-10-15 13:14:15"
+            startedAt: faker.date.past()
         })
       }
       console.log("- Personnels Added.");
