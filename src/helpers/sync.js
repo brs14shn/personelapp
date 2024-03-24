@@ -9,8 +9,8 @@ module.exports = async function () {
 
   /* REMOVE DATABASE */
   const { mongoose } = require("../configs/dbConnection");
-  const faker = require("@faker-js/faker");
-  var faker2 = require("faker");
+  //const faker = require("@faker-js/faker");
+//   const faker = require("faker");
 
   await mongoose.connection.dropDatabase();
   console.log("- Database and all data DELETED!");
@@ -31,21 +31,21 @@ module.exports = async function () {
       // Personnel.create:
       for (let i in [...Array(10)]) {
         Personnel.create({
-          departmentId: department._id,
-          username: faker.internet.userName(),
-          password: "1234",
-          firstName: faker2.name.firstName(),
-          lastName: faker.person.lastName(),
-          phone: faker.phone.number,
-          email: faker.internet.email(),
-          title: faker.person.jobTitle,
-          salary: 2500,
-          description: "description",
-          isActive: true,
-          isAdmin: false,
-          isLead: false,
-          startedAt: faker.date.past(),
-        });
+            departmentId: department._id,
+            username: "test" + (value[0] + i),
+            password: "1234",
+            firstName: "firstName",
+            lastName: "lastName",
+            phone: "123456789",
+            email: "test" + (value[0] + i) + "@site.com",
+            title: "title",
+            salary: 2500,
+            description: "description",
+            isActive: true,
+            isAdmin: false,
+            isLead: false,
+            startedAt: "2023-10-15 13:14:15"
+        })
       }
       console.log("- Personnels Added.");
     });
