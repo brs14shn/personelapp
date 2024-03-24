@@ -37,7 +37,7 @@ module.exports = async function() {
                     firstName: faker.person.fullName(),
                     lastName: faker.name.lastName(),
                     phone: faker.phone.number,
-                    email: "test" + (value[0] + i) + "@site.com",
+                    email:faker.internet.email(),
                     title: faker.person.jobTitle,
                     salary: 2500,
                     description: "description",
