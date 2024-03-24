@@ -9,7 +9,7 @@ module.exports = async function () {
 
   /* REMOVE DATABASE */
   const { mongoose } = require("../configs/dbConnection");
-  //const faker = require("@faker-js/faker");
+  const {faker} = require("@faker-js/faker");
 //   const faker = require("faker");
 
   await mongoose.connection.dropDatabase();
@@ -34,7 +34,7 @@ module.exports = async function () {
             departmentId: department._id,
             username: "test" + (value[0] + i),
             password: "1234",
-            firstName: "firstName",
+            firstName: faker.person.firstName(),
             lastName: "lastName",
             phone: "123456789",
             email: "test" + (value[0] + i) + "@site.com",
