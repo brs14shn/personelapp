@@ -10,6 +10,7 @@
 
 const express = require('express')
 const app = express()
+const cors = require('cors'); 
 
 /* ------------------------------------------------------- */
 // Required Modules:
@@ -33,6 +34,10 @@ dbConnection()
 
 // Accept JSON:
 app.use(express.json())
+// CORS:
+app.use(cors())
+
+
 
 // SessionsCookies:
 app.use(require('cookie-session')({ secret: process.env.SECRET_KEY }))
