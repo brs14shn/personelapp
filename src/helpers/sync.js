@@ -10,7 +10,7 @@ module.exports = async function() {
 
     /* REMOVE DATABASE */
     const { mongoose } = require('../configs/dbConnection')
-    const { faker } = require('@faker-js/faker');
+    const faker = require('faker');
 
     await mongoose.connection.dropDatabase()
     console.log('- Database and all data DELETED!')
