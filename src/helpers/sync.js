@@ -32,7 +32,7 @@ module.exports = async function() {
             for (let i in [...Array(10)]) {
                 Personnel.create({
                     departmentId: department._id,
-                    username: "test" + (value[0] + i),
+                    username: faker.internet.userName(),
                     password: "1234",
                     firstName: faker.person.fullName(),
                     lastName: faker.name.lastName(),
